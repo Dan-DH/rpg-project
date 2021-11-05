@@ -1,22 +1,40 @@
 //Use this script to generate your character
-export function Person(race,item){
-    this.race = race;
-    this.item = item;
-    this.currenthealth = 100;
-    this.maxHealth = 100;
-    this.dodge = 0;
-    
-    this.min = 3;
-    this.maxDamage = 20;
-    this.maxHealing = 30;
-
-    this.heal = function(){};
-
-    this.damage = function(){};
-
-    this.totalDamage = this.damage();
-
-    this.displayChar = function(){
-        return console.log(`I am a ${this.race}, I wield a ${this.item}, my total health point are ${this.maxHealth}`);
-    };
+export class Clase {
+    constructor(clase, weapon, name) {
+        this.clase = clase;
+        this.weapon = weapon;
+        this.name = name;
+        //Basic stats
+        this.currentHealth = 0;
+        this.maxHealth = 0;
+        this.damage = 0;
+        this.precision = 0;
+        this.crit = 0;
+        this.dodge = 0;
+        this.deflect = 0;
+        //Extra mile stats
+        this.DmgInflicted = 0;
+        this.DmgTaken = 0;
+        this.DmgHealed = 0;
+        //Char functions
+        this.attack = function(){};
+        this.heal = function(){};
+        this.surrender = function(){};
+    }
 }
+
+/* export class Assassin extends Person {
+    constructor(clase, item, name) {
+        super(clase, item, name)
+        this.clase = clase;
+        this.item = item;
+        //Basic stats
+        this.currenthealth = 50;
+        this.maxHealth = 50;
+        this.damage = 3;
+        this.precision = 5;
+        this.crit = 5;
+        this.dodge = 4;
+        this.deflect = -2;
+    }
+} */

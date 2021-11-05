@@ -1,0 +1,73 @@
+body {
+    background-image: url("./assets/images/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.player {
+    margin-top: 30%;
+}
+
+.player2 {
+    transform: scaleX(-1);
+}
+
+.test {
+    display: block;
+}
+
+.statsTable {
+    color: white;
+}
+
+#p1name, #p2name {
+    color:white;
+    font-weight: bold;
+}
+
+.activeTurn {
+    transform: scale(1.2);
+}
+
+
+/********************************POPUP********************/
+.popup {
+     /*    display: none; */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9;
+    max-width: 600px;
+    max-height: 600px;
+    padding: 10px;
+    overflow: auto;
+    background-color: #435b50; /*make a gradient from bg colors*/
+    border: 2px solid black;
+    box-shadow: 3px 3px grey;
+    text-align: center;
+    color: white;
+    border-radius: 5px;
+}
+
+#center {
+    text-align: center; /*center the close button in the popup*/
+}
+   
+.form-container .cancel {
+  background-color: red!important;
+  color:white!important;
+}
+
+.howTo {
+    padding: 1%;
+    list-style: none;
+    margin: 0;
+}
+
+.howTo li {
+    padding: 3% 0;
+    text-align: justify;
+    text-justify: inter-word;
+}
+/********************************POPUP********************/
