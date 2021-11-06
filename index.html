@@ -12,9 +12,9 @@
     <header>
 
     </header>
-    </div>
-    <div class="row ring">
-        <div class="col-6 player text-center" id="p1div">
+    <div class="gameLog"></div>
+    <div class="row ring text-center">
+        <div class="col-6 player" id="player1">
             <div class="btnRow">
                 <button class="click btn btn-danger atkBtn">
                     <img src="./assets/icons/sword.png" alt="volume-high" class="gBtn">
@@ -29,14 +29,14 @@
             <div class="playerRow">
                 <div id="p1name"></div>
                 <div>
-                    <progress id="hp1" value="100" max="100"></progress>
+                    <progress id="HPplayer1" value="" max=""></progress>
                 </div>
                 <div class="pImage">
                     <img src="" alt="" class="player1">
                 </div>
             </div>
         </div>
-        <div class="col-6 player text-center" id="p2div">
+        <div class="col-6 player text-center" id="player2">
             <div class="btnRow">
                 <button class="click btn btn-danger atkBtn">
                     <img src="./assets/icons/sword.png" alt="volume-high" class="gBtn">
@@ -50,7 +50,7 @@
             </div>
             <div class="playerRow">
                 <div id="p2name"></div>
-                <progress id="hp2" value="100" max="100"></progress>
+                <progress id="HPplayer2" value="100" max="100"></progress>
                 <div class="pImage">
                     <img src="" alt="" class="player2">
                 </div>
@@ -64,7 +64,8 @@
             <div class="charSelfImg">
                 <img id="charSelfImg" src="./assets/images/assassin.webp" alt="">
             </div>
-                <label for="classDrop">CLASS:</label>
+            <div class="btnDrop">
+                <label for="classDrop">CLASS</label>
                 <select name="classDrop" id="classDrop">
                     <option value="assassin">Assassin</option>
                     <option value="berserker">Berserker</option>
@@ -72,8 +73,8 @@
                     <option value="monk">Monk</option>
                 </select> 
             </div>
-            <div>
-                <label for="itemDrop">WEAPON:</label>
+            <div class="btnDrop">
+                <label for="itemDrop">WEAPON</label>
                 <select name="itemDrop" id="itemDrop">
                     <option value="axe">Axe (+2 crit)</option>
                     <option value="daggers">Daggers (+2 dodge)</option>
@@ -104,11 +105,26 @@
                 </tbody>
             </table>
             <div class="playerName">
-                <label for="pName">NAME:</label>
+                <label for="pName">NAME</label>
                 <input id="name" name="pName" class="input" type="text" maxlength="10">
             </div>
             <div>
                 <button type="button" class="btn btn-secondary" id="closeForm">READY</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup closeGOform" id="goPop">
+        <div class="form-container">
+            <h5 id="winnerTag"></h5>
+            <div class="charSelfImg">
+                <img id="winnerImg" src="" alt="Winner image">
+            </div>
+            <div>
+                <button type="button" class="btn btn-danger goBtn" id="rematch">REMATCH</button>
+            </div>
+            <div>
+                <button type="button" class="btn btn-secondary goBtn" id="readLog">CLOSE</button>
             </div>
         </div>
     </div>

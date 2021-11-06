@@ -1,10 +1,11 @@
 //Use this script to generate your character
 export class Clase {
-    constructor(clase, weapon, name, player) {
+    constructor(clase, weapon, name, player, portrait) {
         this.clase = clase;
         this.weapon = weapon;
         this.name = name;
         this.player = player;
+        this.portrait = portrait;
         //Basic stats
         this.currentHealth = 0;
         this.maxHealth = 0;

@@ -4,13 +4,25 @@ body {
     background-size: cover;
 }
 
+.gameLog {
+    background-color: #172521;
+    color: white;
+    overflow: auto;
+    font-size: x-large;
+    width: 50%;
+    height: 150px;
+    margin: auto;
+    margin-top: 10%;
+    border: 1px solid #37504a!important;
+    border-radius: 5px;
+    padding: 10px;
+}
 .player {
-    margin-top: 20%;
+    margin-top: 5%;
 }
 
 .click {
     margin: 0 5px;
-    /* border: 2px solid white!important; */
 }
 
 .click, .click:hover, .click:active, .click:disabled, .click:focus {
@@ -44,6 +56,15 @@ body {
     font-size: x-large;
 }
 
+.lost {
+    animation: lost 1.5s;
+}
+
+@keyframes lost {
+    0% {opacity: 0.7;}
+    100% {opacity: 0;}
+}
+
 .activeTurn {
     transition: transform 1s;
     transform: scale(1.15);
@@ -54,27 +75,27 @@ body {
     transform: scale(1);
 } 
 
-.attack1 {
+.attackplayer1 {
     animation: attackAnim1 0.3s;
 }
 
-.attack2 {
+.attackplayer2 {
     animation: attackAnim2 0.3s;
 }
 
-.dodge1 {
+.dodgeplayer1 {
     animation: dodgeAnim1 0.5s;
 }
 
-.dodge2 {
+.dodgeplayer2 {
     animation: dodgeAnim2 0.5s;
 }
 
-.hit1 {
+.hitplayer1 {
     animation: hitAnim1 0.3s;
 }
 
-.hit2 {
+.hitplayer2 {
     animation: hitAnim2 0.3s;
 }
 
@@ -89,10 +110,11 @@ body {
 }
 
 @keyframes hitAnim1 {
-    25%  {transform: translateX(-3%)}
-    50%  {transform: translateX(3%)}
-    75%  {transform: translateX(-3%)}
-    100% {transform: translateX(3%)}
+    20%  {transform: translateX(-3%)}
+    40%  {transform: translateX(3%)}
+    60%  {transform: translateX(-3%)}
+    80%  {transform: translateX(3%)}
+    100% {transform: translateX(-3%)}
 }
 
 @keyframes attackAnim2 {
@@ -106,10 +128,11 @@ body {
 }
 
 @keyframes hitAnim2 {
-    25%  {transform: translateX(3%)}
-    50%  {transform: translateX(-3%)}
-    75%  {transform: translateX(3%)}
-    100% {transform: translateX(-3%)}
+    20%  {transform: translateX(3%)}
+    40%  {transform: translateX(-3%)}
+    60%  {transform: translateX(3%)}
+    80%  {transform: translateX(-3%)}
+    100% {transform: translateX(3%)}
 }
 
 /********************************POPUP********************/
@@ -125,31 +148,28 @@ body {
     padding: 10px;
     overflow: auto;
     background-color: #435b50; /*make a gradient from bg colors*/
-    border: 2px solid black;
-    box-shadow: 3px 3px grey;
+    border: 1px solid black;
+    box-shadow: 10px 10px black;
     text-align: center;
     color: white;
     border-radius: 5px;
+}  
+
+.btnDrop {
+    margin: 15px 0
 }
 
-#center {
-    text-align: center; /*center the close button in the popup*/
-}
-   
-.form-container .cancel {
-  background-color: red!important;
-  color:white!important;
-}
-
-.howTo {
-    padding: 1%;
-    list-style: none;
-    margin: 0;
-}
-
-.howTo li {
-    padding: 3% 0;
-    text-align: justify;
-    text-justify: inter-word;
+#closeForm {
+    margin-top: 15px;
 }
 /********************************POPUP********************/
+
+/***********************GO POPUP***************************/
+.goBtn {
+    margin: 5px 0;
+}
+
+#winnerTag {
+    text-transform: uppercase;
+}
+/***********************GO POPUP***************************/
