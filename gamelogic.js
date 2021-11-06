@@ -147,15 +147,24 @@ function attack(atk, def) {
     //adjusting health bars
     hp1.value = p1.currentHealth
     hp2.value = p2.currentHealth
-    //removing classes. Can't pass arguments to a setTimeout function directly, need arrow func
+    //removing classes
     setTimeout(() => rmvClass(atkClass, hitClass, dodgeClass, deflectClass, deflectHitClass), 1000)
 }
 
 function heal(player) {
-    var heals = Math.round(Math.random()*10+1)
-    player.currentHealth += heals //heals for a random amount between 1 and 10
-    gameLog.innerHTML = gameLog.innerHTML + `${player.name} heals for ${heals} !<br>`;
-    gameLog.scrollTop = gameLog.scrollHeight;
+    if (player.currentHealth < player.maxHealth) {
+        var heals = Math.round(Math.random()*10+1)
+        player.currentHealth += heals //heals for a random amount between 1 and 10
+        if (player.currentHealth >= player.maxHealth) {
+            player.currentHealth = player.maxHealth;//avoiding overhealing
+            gameLog.innerHTML = gameLog.innerHTML + `${player.name} is back at full health !<br>`
+        } else {
+        gameLog.innerHTML = gameLog.innerHTML + `${player.name} heals for ${heals} !<br>`;
+        }
+    } else {
+        gameLog.innerHTML = gameLog.innerHTML + `${player.name} cowardly tries to heal at full health ! Nothing happens !<br>`;
+    }
+    gameLog.scrollTop = gameLog.scrollHeight; 
     hp1.value = p1.currentHealth
     hp2.value = p2.currentHealth
 }
