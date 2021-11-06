@@ -9,22 +9,51 @@
     <title>Document</title>
 </head>
 <body>
-    <header></header>
+    <header>
+
+    </header>
+    </div>
     <div class="row ring">
         <div class="col-6 player text-center" id="p1div">
-            <div id="p1name"></div>
-            <div>
-                <progress id="hp1" value="100" max="100"></progress>
+            <div class="btnRow">
+                <button class="click btn btn-danger atkBtn">
+                    <img src="./assets/icons/sword.png" alt="volume-high" class="gBtn">
+                </button>
+                <button class="click btn btn-success hlBtn">
+                    <img src="./assets/icons/healing.png" alt="volume-high" class="gBtn">
+                </button>
+                <button class="click btn btn-secondary gOver">
+                    <img src="./assets/icons/flags.png" alt="volume-high" class="gBtn">
+                </button>
             </div>
-            <div class="pImage">
-                <img src="" alt="" class="player1">
+            <div class="playerRow">
+                <div id="p1name"></div>
+                <div>
+                    <progress id="hp1" value="100" max="100"></progress>
+                </div>
+                <div class="pImage">
+                    <img src="" alt="" class="player1">
+                </div>
             </div>
         </div>
         <div class="col-6 player text-center" id="p2div">
-            <div id="p2name"></div>
-            <progress id="hp2" value="100" max="100"></progress>
-            <div class="pImage">
-                <img src="" alt="" class="player2">
+            <div class="btnRow">
+                <button class="click btn btn-danger atkBtn">
+                    <img src="./assets/icons/sword.png" alt="volume-high" class="gBtn">
+                </button>
+                <button class="click btn btn-success hlBtn">
+                    <img src="./assets/icons/healing.png" alt="volume-high" class="gBtn">
+                </button>
+                <button class="click btn btn-secondary gOver">
+                    <img src="./assets/icons/flags.png" alt="volume-high" class="gBtn">
+                </button>
+            </div>
+            <div class="playerRow">
+                <div id="p2name"></div>
+                <progress id="hp2" value="100" max="100"></progress>
+                <div class="pImage">
+                    <img src="" alt="" class="player2">
+                </div>
             </div>
         </div>
     </div>
@@ -79,7 +108,6 @@
                 <input id="name" name="pName" class="input" type="text" maxlength="10">
             </div>
             <div>
-<!--                 <button type="button" class="btn cancel" id="closeForm">READY</button> -->
                 <button type="button" class="btn btn-secondary" id="closeForm">READY</button>
             </div>
         </div>

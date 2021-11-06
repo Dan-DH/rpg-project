@@ -67,10 +67,23 @@ function newClase(p) {
     }
 }
 
-//didn't use these in the end
-var inputClass;
-var inputWeapon;
-var inputName;
+//character actions
+function attack(atk, def) {
+    //add here actual attack rolls
+    //check if i can use atk.player1 in line 75. `p${activeP}div` used only thrice
+    console.log(`${atk.name} attacks ${def.name} !`);
+    document.getElementById(`p${activeP}div`).classList.add("attack" + activeP); //"hit" + activeP
+    document.getElementById(`p2div`).classList.add("dodge2"); //"hit" + activeP
+}
+
+function heal(player) {
+    var heals = 5;
+    console.log(`${player.name} heals for ${heals} !`);
+}
+
+function surrender(player) {
+    console.log(`${player.name} gives up !`);
+}
 
 //settings vars for player selection
 var p1
@@ -78,8 +91,9 @@ var p2
 var p1done = false
 var p2done = false
 
-//hidding health bars until game starts
+//hidding health bars and buttons until game starts
 document.querySelectorAll("progress").forEach(bar => bar.style.visibility = "hidden")
+document.querySelectorAll(".btnRow").forEach(btn => btn.style.visibility = "hidden")
 
 //refresh char selection info function
 function popChar() {
@@ -101,41 +115,64 @@ document.getElementById("classDrop").addEventListener("change",() => {
 
 //submitting the info for player 1
 function charSelect() {
-    popChar();
-    document.getElementById("infoPop").style.display = "inherit";
     document.getElementById("closeForm").addEventListener("click",() => {
-        var pClass = document.getElementById("classDrop").options[document.getElementById("classDrop").selectedIndex].value;
-        var pNam = document.getElementById("itemDrop").options[document.getElementById("itemDrop").selectedIndex].value;
-        var pWep = document.getElementById("name").value;
+        var inputClass = document.getElementById("classDrop").options[document.getElementById("classDrop").selectedIndex].value;
+        var inputName = document.getElementById("itemDrop").options[document.getElementById("itemDrop").selectedIndex].value;
+        var inputWeapon = document.getElementById("name").value;
         if (p1done == false) {
-            p1 = new Clase(pClass, pNam, pWep)
+            p1 = new Clase(inputClass, inputName, inputWeapon, "player1")
             newClase(p1)
             p1done = true;
             document.getElementById("charSelfImg").classList.add("player2")
         } else {
-            p2 = new Clase(pClass, pNam, pWep)
+            p2 = new Clase(inputClass, inputWeapon, inputWeapon, "player2")
             newClase(p2)
             p2done = true;
+            document.getElementById("infoPop").style.display = "none";
+            startGame()
         }
-        document.getElementById("infoPop").style.display = "none";
-        p2done == true ? startGame() : setTimeout(charSelect, 500)
     });
 }
-
-charSelect()
 
 function startGame() {
     //add player characters and health bars
     document.querySelector(".player1").src = portraits[p1.clase]
     document.querySelector(".player2").src = portraits[p2.clase]
     document.querySelectorAll("progress").forEach(bar => bar.style.visibility = "visible");
+    document.querySelectorAll(".btnRow").forEach(bar => bar.style.visibility = "visible")
     document.getElementById("p1name").innerHTML = p1.name;
     document.getElementById("p2name").innerHTML = p2.name;
-    //start first turn
-    playerTurn();
+    takeTurns("activeTurn", "inactiveTurn");
 }
 
-function playerTurn() {
-//animate the transform
+//active player switch
+var activeP = 1;
+//switch animation function
+function takeTurns(add, remove) {
+    document.getElementById(`p${activeP}div`).classList.add(add);
+    document.getElementById(`p${activeP}div`).classList.remove(remove);
 }
+//listener for actions
+document.querySelectorAll(".click").forEach(btn =>
+    btn.addEventListener("click", () => {
+        if (btn.classList.contains("atkBtn")) {
+            activeP == 1 ? attack(p1, p2) : attack(p2, p1);
+        } else if (btn.classList.contains("hlBtn")) {
+            activeP == 1 ? heal(p1) : heal(p2);
+        } else if (btn.classList.contains("gOver")){
+            activeP == 1 ? surrender(p1) : surrender(p2);               
+        }
+    setTimeout(() => {
+        takeTurns("inactiveTurn", "activeTurn");
+        activeP == 1 ? 
+            document.querySelector("." + p1.player).style.animation = ""
+            : document.querySelector("." + p2.player).style.animation = ""
+        activeP = activeP == 1 ? 2 : 1;
+        takeTurns("activeTurn", "inactiveTurn");
+        },1000)
 
+    })
+);
+
+popChar();
+charSelect();
