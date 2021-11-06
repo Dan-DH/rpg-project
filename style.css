@@ -4,6 +4,10 @@ body {
     background-size: cover;
 }
 
+header {
+    color: white;
+}
+
 .gameLog {
     background-color: #172521;
     color: white;
@@ -144,7 +148,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 9;
-    max-width: 900px;
+    max-width: 800px;
     max-height: 650px;
     padding: 10px;
     overflow: auto;
