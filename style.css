@@ -145,7 +145,7 @@ body {
     transform: translate(-50%, -50%);
     z-index: 9;
     max-width: 800px;
-    height: 650px;
+    max-height: 650px;
     padding: 10px;
     overflow: auto;
     background-color: #435b50; /*make a gradient from bg colors*/
