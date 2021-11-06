@@ -208,13 +208,13 @@ function charSelect() {
         var inputName = document.getElementById("name").value;
         var portrait = portraits[inputClass];
         if (p1done == false) {
-            inputName = inputName == "" ? "Player 1" : true;
+            inputName = inputName == "" ? "Player 1" : inputName;
             p1 = new Clase(inputClass, inputWeapon, inputName, "player1", portrait)
             newClase(p1)
             p1done = true;
             document.getElementById("charSelfImg").classList.add("player2")
         } else {
-            inputName = inputName == "" ? "Player 2" : true;
+            inputName = inputName == "" ? "Player 2" : inputName;
             p2 = new Clase(inputClass, inputWeapon, inputName, "player2", portrait)
             newClase(p2)
             p2done = true;
