@@ -29,7 +29,7 @@ const stats = {
     berserker: {
         hp: 70,
         maxHealth : 70,
-        damage : 5,
+        damage : 4,
         precision : 3,
         crit : 2,
         dodge : 2,
@@ -42,7 +42,7 @@ const stats = {
         precision : 6,
         crit : 0,
         dodge : 1,
-        deflect : 6
+        deflect : 5
     },
 }
 

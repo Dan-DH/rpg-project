@@ -18,9 +18,5 @@ export class Clase {
         this.DmgInflicted = 0;
         this.DmgTaken = 0;
         this.DmgHealed = 0;
-        //Char functions
-/*         this.attack = function(){};
-        this.heal = function(){};
-        this.surrender = function(){}; */
     }
 }
