@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Slayer. Turn based 2 player game.">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css">
     <title>Slay!</title>
@@ -65,22 +66,24 @@
                 <img id="charSelfImg" src="./assets/images/assassin.webp" alt="">
             </div>
             <div class="btnDrop">
-                <label for="classDrop">CLASS</label>
-                <select name="classDrop" id="classDrop">
-                    <option value="assassin">Assassin</option>
-                    <option value="berserker">Berserker</option>
-                    <option value="automaton">Automaton</option>
-                    <option value="monk">Monk</option>
-                </select> 
+                <label for="classDrop">CLASS
+                    <select name="classDrop" id="classDrop">
+                        <option value="assassin">Assassin</option>
+                        <option value="berserker">Berserker</option>
+                        <option value="automaton">Automaton</option>
+                        <option value="monk">Monk</option>
+                    </select>
+                </label>
             </div>
             <div class="btnDrop">
-                <label for="itemDrop">WEAPON</label>
-                <select name="itemDrop" id="itemDrop">
-                    <option value="axe">Axe (+2 crit)</option>
-                    <option value="daggers">Daggers (+2 dodge)</option>
-                    <option value="helm">Helm (+2 precision)</option>
-                    <option value="staff">Staff (+2 deflect)</option>
-                </select> 
+                <label for="itemDrop">WEAPON
+                    <select name="itemDrop" id="itemDrop">
+                        <option value="axe">Axe (+2 crit)</option>
+                        <option value="daggers">Daggers (+2 dodge)</option>
+                        <option value="helm">Helm (+2 precision)</option>
+                        <option value="staff">Staff (+2 deflect)</option>
+                    </select> 
+                </label>
             </div>
             <table class="table statsTable">
                 <thead>
@@ -105,8 +108,9 @@
                 </tbody>
             </table>
             <div class="playerName">
-                <label for="pName">NAME</label>
-                <input id="name" name="pName" class="input" type="text" maxlength="10">
+                <label for="pName">NAME
+                    <input id="name" name="pName" class="input" type="text" maxlength="10">
+                </label>
             </div>
             <div>
                 <button type="button" class="btn btn-secondary" id="closeForm">READY</button>
