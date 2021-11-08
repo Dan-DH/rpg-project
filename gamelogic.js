@@ -27,9 +27,9 @@ const stats = {
         deflect : 2
     },
     berserker: {
-        hp: 75,
-        maxHealth : 75,
-        damage : 6,
+        hp: 70,
+        maxHealth : 70,
+        damage : 5,
         precision : 3,
         crit : 2,
         dodge : 2,
@@ -38,7 +38,7 @@ const stats = {
     monk: {
         hp: 50,
         maxHealth : 50,
-        damage : 2,
+        damage : 3,
         precision : 6,
         crit : 0,
         dodge : 1,
