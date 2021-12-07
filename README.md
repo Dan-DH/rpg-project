@@ -19,7 +19,7 @@ The website must contain a game with RPG-like turn-based combat for two players.
 - Three actions to choose from each turn:
   - Attack: Deals a fixed amount of damage, depending on character, with a chance to crit for x1.5 damage. Normal attacks can be dodged or deflected, inflicting half the damage back to the attacker. Critical hits can only be dodged.
   - Heal: Restores a random amount of health between 1 and 10.
-  - Surrender: Inmediately end the game, granting victory to the oponent.
+  - Surrender: Inmediately ends the game, granting victory to the oponent.
 - Four character animations: attack, dodge, received damage, and death/surrender.
 - Game log describing the actions taken each turn.
 - Health bar, animated on real time.
@@ -27,7 +27,7 @@ The website must contain a game with RPG-like turn-based combat for two players.
 
 ### Time frame
 
-Two and half days.
+Two and a half days.
 
 Project created in November 2021
 
