@@ -1,176 +1,227 @@
 body {
-    background-image: url("./assets/images/bg.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-image: url("./assets/images/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 header {
-    color: white;
+  color: white;
 }
 
 .gameLog {
-    background-color: #172521;
-    color: white;
-    overflow: auto;
-    font-size: x-large;
-    width: 50%;
-    height: 150px;
-    margin: auto;
-    margin-top: 10%;
-    border: 1px solid #37504a!important;
-    border-radius: 5px;
-    padding: 10px;
+  background-color: #172521;
+  color: white;
+  overflow: auto;
+  font-size: x-large;
+  width: 50%;
+  height: 150px;
+  margin: auto;
+  margin-top: 10%;
+  border: 1px solid #37504a !important;
+  border-radius: 5px;
+  padding: 10px;
 }
 
 .player {
-    margin-top: 5%;
+  margin-top: 5%;
 }
 
 .click {
-    margin: 0 5px;
+  margin: 0 5px;
 }
 
-.click, .click:hover, .click:active, .click:disabled, .click:focus {
-    box-shadow: 10px 10px black;
+.click,
+.click:hover,
+.click:active,
+.click:disabled,
+.click:focus {
+  box-shadow: 10px 10px black;
 }
 
 .gBtn {
-    width: 50px;
-    height: 50px;
+  width: 50px;
+  height: 50px;
 }
 
 .playerRow {
-    margin-top: 8%;
+  margin-top: 8%;
 }
 
 .player2 {
-    transform: scaleX(-1);
+  transform: scaleX(-1);
 }
 
 .statsTable {
-    color: white;
+  color: white;
 }
 
-#p1name, #p2name {
-    color:white;
-    font-weight: bold;
-    font-size: x-large;
+#p1name,
+#p2name {
+  color: white;
+  font-weight: bold;
+  font-size: x-large;
 }
 
 .lost {
-    animation: lost 1.5s;
+  animation: lost 1.5s;
 }
 
 @keyframes lost {
-    0% {opacity: 0.7;}
-    100% {opacity: 0;}
+  0% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 .activeTurn {
-    transition: transform 1s;
-    transform: scale(1.15);
+  transition: transform 1s;
+  transform: scale(1.15);
 }
 
 .inactiveTurn {
-    transition: transform 1s;
-    transform: scale(1);
-} 
+  transition: transform 1s;
+  transform: scale(1);
+}
 
 .attackplayer1 {
-    animation: attackAnim1 0.3s;
+  animation: attackAnim1 0.3s;
 }
 
 .attackplayer2 {
-    animation: attackAnim2 0.3s;
+  animation: attackAnim2 0.3s;
 }
 
 .dodgeplayer1 {
-    animation: dodgeAnim1 0.5s;
+  animation: dodgeAnim1 0.5s;
 }
 
 .dodgeplayer2 {
-    animation: dodgeAnim2 0.5s;
+  animation: dodgeAnim2 0.5s;
 }
 
 .hitplayer1 {
-    animation: hitAnim1 0.3s;
+  animation: hitAnim1 0.3s;
 }
 
 .hitplayer2 {
-    animation: hitAnim2 0.3s;
+  animation: hitAnim2 0.3s;
 }
 
 @keyframes attackAnim1 {
-    25%  {transform: scale(1.15) translateX(10%)}
-    100% {transform: scale(1.15) translateX(0%)}
+  25% {
+    transform: scale(1.15) translateX(10%);
+  }
+  100% {
+    transform: scale(1.15) translateX(0%);
+  }
 }
 
 @keyframes dodgeAnim1 {
-    25%  {transform: translateX(-10%)}
-    100% {transform: translateX(0%)}
+  25% {
+    transform: translateX(-10%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
 }
 
 @keyframes hitAnim1 {
-    20%  {transform: translateX(-3%)}
-    40%  {transform: translateX(3%)}
-    60%  {transform: translateX(-3%)}
-    80%  {transform: translateX(3%)}
-    100% {transform: translateX(-3%)}
+  20% {
+    transform: translateX(-3%);
+  }
+  40% {
+    transform: translateX(3%);
+  }
+  60% {
+    transform: translateX(-3%);
+  }
+  80% {
+    transform: translateX(3%);
+  }
+  100% {
+    transform: translateX(-3%);
+  }
 }
 
 @keyframes attackAnim2 {
-    25%  {transform: scale(1.15) translateX(-10%)}
-    100% {transform: scale(1.15) translateX(0%)}
+  25% {
+    transform: scale(1.15) translateX(-10%);
+  }
+  100% {
+    transform: scale(1.15) translateX(0%);
+  }
 }
 
 @keyframes dodgeAnim2 {
-    25%  {transform: translateX(10%)}
-    100% {transform: translateX(-0%)}
+  25% {
+    transform: translateX(10%);
+  }
+  100% {
+    transform: translateX(-0%);
+  }
 }
 
 @keyframes hitAnim2 {
-    20%  {transform: translateX(3%)}
-    40%  {transform: translateX(-3%)}
-    60%  {transform: translateX(3%)}
-    80%  {transform: translateX(-3%)}
-    100% {transform: translateX(3%)}
+  20% {
+    transform: translateX(3%);
+  }
+  40% {
+    transform: translateX(-3%);
+  }
+  60% {
+    transform: translateX(3%);
+  }
+  80% {
+    transform: translateX(-3%);
+  }
+  100% {
+    transform: translateX(3%);
+  }
 }
 
 /********************************POPUP********************/
 .popup {
-     /*    display: none; */
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 9;
-    max-width: 800px;
-    max-height: 650px;
-    padding: 10px;
-    overflow: auto;
-    background-color: #435b50; /*make a gradient from bg colors*/
-    border: 1px solid black;
-    box-shadow: 10px 10px black;
-    text-align: center;
-    color: white;
-    border-radius: 5px;
-}  
+  /*    display: none; */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9;
+  max-width: 800px;
+  max-height: 650px;
+  padding: 10px;
+  overflow: auto;
+  background-color: #435b50; /*make a gradient from bg colors*/
+  border: 1px solid black;
+  box-shadow: 10px 10px black;
+  text-align: center;
+  color: white;
+  border-radius: 5px;
+}
 
 .btnDrop {
-    margin: 15px 0
+  margin: 15px 0;
 }
 
 #closeForm {
-    margin-top: 15px;
+  margin-top: 15px;
 }
 /********************************POPUP********************/
 
 /***********************GO POPUP***************************/
 .goBtn {
-    margin: 5px 0;
+  margin: 5px 0;
 }
 
 #winnerTag {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 /***********************GO POPUP***************************/
+
+@media (max-width: 992px) {
+  body {
+    background-size: inherit;
+  }
+}
